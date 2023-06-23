@@ -1,0 +1,24 @@
+public class Array_14 {
+ // buy and selll the stock , where we obtain maximum profit
+// que :-  03
+
+    public static int maxProfit(int [] prices) {
+        int buy = prices[0];
+        int profit = 0;
+        for (int i = 1; i < prices.length ; i++) {
+            if (buy<prices[i]){
+                profit = Math.max(prices[i]-buy,profit);
+            }
+            else {
+                buy = prices[i];
+
+            }
+        }
+        return profit;
+    }
+    public static void main(String[] args) {
+int [] prices= {8,5,6,9,4,2,6,8,9};
+int ans = maxProfit(prices);
+        System.out.println(ans);
+    }
+}
